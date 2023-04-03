@@ -36,7 +36,8 @@ function onInput(evt) {
 function getValueLocalStorage() { 
   const savedMessage = JSON.parse(localStorage.getItem('feedback-form-state'))
   if (savedMessage) { 
-    Object.entries(savedMessage).forEach(function ([name,value]) { 
+    Object.entries(savedMessage).forEach(function ([name, value]) { 
+      formData[name] = value
       form.elements[name].value = value;
     })
   }
